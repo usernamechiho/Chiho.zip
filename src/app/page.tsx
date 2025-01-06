@@ -1,11 +1,9 @@
-import Link from "next/link";
+import MainHeader from "@/_components/MainHeader";
 
 export default function Home() {
   return (
-    <div className="flex justify-center h-screen">
-      <Link href="/post" className="underline">
-        Post
-      </Link>
+    <div>
+      <MainHeader />
     </div>
   );
 }

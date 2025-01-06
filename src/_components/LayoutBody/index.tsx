@@ -3,5 +3,9 @@ export default function LayoutBody({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="pt-11 h-screen flex justify-center">{children}</div>;
+  return (
+    <div>
+      <div>{children}</div>
+    </div>
+  );
 }

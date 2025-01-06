@@ -4,8 +4,8 @@ export default function LayoutBody({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <div>{children}</div>
+    <div className="min-h-screen flex justify-center overflow-y-scroll pt-20">
+      <div className="w-2/6">{children}</div>
     </div>
   );
 }

@@ -1,21 +1,29 @@
+import PostList from "@/_components/PostList";
 import { getPosts } from "@/_utils/post";
 
 export default async function Post() {
   const posts = await getPosts();
 
-  console.log(posts);
-
   return (
     <div className="flex flex-col">
       <p className="text-black text-lg font-bold">Post</p>
 
-      <div className="flex flex-col mt-12">
-        {posts.map((post) => (
-          <div key={post.slug}>
-            {post.createdAt.toString()} {post.category} / {post.title}
-          </div>
-        ))}
-      </div>
+      <ul className="flex flex-col mt-12 gap-4">
+        {posts.map((post, index) => {
+          /** 현재 게시글이 해당 연도의 첫 번째 게시글인지 확인 */
+          const isFirstPostOfYear =
+            index === 0 || posts[index - 1].createdYear !== post.createdYear;
+
+          return (
+            <PostList
+              key={post.slug}
+              index={index}
+              post={post}
+              isFirstPostOfYear={isFirstPostOfYear}
+            />
+          );
+        })}
+      </ul>
     </div>
   );
 }

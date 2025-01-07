@@ -5,7 +5,7 @@ export default function LayoutBody({
 }) {
   return (
     <div className="min-h-screen flex justify-center overflow-y-scroll pt-20">
-      <div className="w-2/6">{children}</div>
+      <div className="px-4 w-[650px] min-w-[360px]">{children}</div>
     </div>
   );
 }

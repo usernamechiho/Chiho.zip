@@ -10,13 +10,19 @@ export default function MainHeader() {
 
   const pathname = usePathname();
 
+  const formatPathname = (path: string) => {
+    if (path === "/") return "home";
+    return path.split("/").filter(Boolean).join(" / ");
+  };
+
   return (
     <>
-      <div className="flex justify-between items-center w-full relative mb-40">
+      <div className="flex justify-between items-center w-full relative mb-20">
         <div className="flex items-center text-sm">
           <p className="text-gray">chiho.zip&nbsp; &nbsp; / &nbsp; &nbsp;</p>
-
-          <p className="text-black">{pathname === "/" ? "home" : pathname}</p>
+          <p className="text-black [word-spacing:0.7rem]">
+            {formatPathname(pathname)}
+          </p>
         </div>
 
         <div>

@@ -2,10 +2,10 @@ type PostCategory = "Javascript" | "Browser";
 
 type Post = {
   title: string;
-  description: string;
-  category: PostCategory;
-  createdAt: string;
   slug: string;
+  category: PostCategory;
+  createdYear: string;
+  createdDate: string;
 };
 
 export type { PostCategory, Post };

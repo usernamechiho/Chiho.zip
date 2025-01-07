@@ -16,57 +16,43 @@ async function getPosts(): Promise<Post[]> {
    * 포스트 디렉토리 내의 모든 항목을 가져옴
    * withFileTypes: true 옵션으로 파일 타입 정보도 함께 가져옴
    */
-  const categories = await readdir(postPath, { withFileTypes: true });
+  const postFolders = await readdir(postPath, { withFileTypes: true });
 
   // 결과 저장을 위한 배열 초기화
   const posts: Post[] = [];
 
   /**
-   * 각 카테고리 디렉토리를 순회
+   * 각 포스트 폴더를 순회
    */
-  for (const category of categories) {
-    /**
-     * 디렉토리가 아닌 항목은 건너뜀
-     */
-    if (!category.isDirectory()) continue;
-
-    // 현재 카테고리의 전체 경로 생성
-    const categoryPath = path.join(postPath, category.name);
-    // 카테고리 내의 포스트 폴더들을 가져옴
-    const postFolders = await readdir(categoryPath, { withFileTypes: true });
+  for (const postFolder of postFolders) {
+    // 디렉토리가 아닌 항목은 건너뜀
+    if (!postFolder.isDirectory()) continue;
 
     /**
-     * 각 포스트 폴더를 순회
+     * content.mdx 파일의 전체 경로 생성
+     *
+     * 구조: src/_posts/[post-slug]/content.mdx
      */
-    for (const postFolder of postFolders) {
-      // 디렉토리가 아닌 항목은 건너뜀
-      if (!postFolder.isDirectory()) continue;
+    const contentPath = path.join(postPath, postFolder.name, "content.mdx");
 
-      /**
-       * content.mdx 파일의 전체 경로 생성
-       *
-       * 구조: src/_posts/[category]/[post-slug]/content.mdx
-       */
-      const contentPath = path.join(
-        categoryPath,
-        postFolder.name,
-        "content.mdx"
-      );
-
+    try {
       // MDX 파일의 내용을 UTF-8 인코딩으로 읽어옴
       const content = await readFile(contentPath, "utf-8");
       // gray-matter를 사용하여 frontmatter 데이터 파싱
       const { data } = matter(content);
+
+      console.log(data.createdAt);
 
       // 포스트 메타데이터를 배열에 추가
       posts.push({
         title: data.title,
         description: data.description,
         category: data.category,
-        thumbnail: data.thumbnail,
         createdAt: data.createdAt,
         slug: postFolder.name,
       });
+    } catch (error) {
+      console.error(`Error reading post ${postFolder.name}:`, error);
     }
   }
 

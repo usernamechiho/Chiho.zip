@@ -1,5 +1,6 @@
 import LayoutBody from "@/_components/LayoutBody";
 import "./globals.css";
+import MainHeader from "@/_components/MainHeader";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <LayoutBody>{children}</LayoutBody>
+        <LayoutBody>
+          <MainHeader />
+          {children}
+        </LayoutBody>
       </body>
     </html>
   );

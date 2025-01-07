@@ -4,7 +4,6 @@ type Post = {
   title: string;
   description: string;
   category: PostCategory;
-  thumbnail: string;
   createdAt: string;
   slug: string;
 };

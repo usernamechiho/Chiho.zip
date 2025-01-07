@@ -9,7 +9,6 @@
   --font-sm: 12px;
   --font-md: 14px;
   --font-lg: 16px;
-  --font-bold: 600px;
 }
 
 [data-theme="dark"] {
@@ -19,7 +18,6 @@
   --font-sm: 12px;
   --font-md: 14px;
   --font-lg: 16px;
-  --font-bold: 600px;
 }
 
 body {

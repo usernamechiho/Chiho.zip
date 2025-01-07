@@ -12,7 +12,7 @@ export default function MainHeader() {
 
   return (
     <>
-      <div className="flex justify-between items-center w-full relative">
+      <div className="flex justify-between items-center w-full relative mb-40">
         <div className="flex items-center text-sm">
           <p className="text-gray">chiho.zip&nbsp; &nbsp; / &nbsp; &nbsp;</p>
 
@@ -21,8 +21,10 @@ export default function MainHeader() {
 
         <div>
           <Plus
-            size={18}
-            className="text-gray cursor-pointer"
+            size={20}
+            className={`text-gray cursor-pointer transition-transform duration-200 ease-in-out ${
+              isPopoverOpen ? "rotate-45" : ""
+            }`}
             onClick={() => setIsPopoverOpen((prev) => !prev)}
           />
 

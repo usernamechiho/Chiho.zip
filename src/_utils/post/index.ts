@@ -57,4 +57,10 @@ async function getPosts(): Promise<Post[]> {
   return posts;
 }
 
-export { getPosts };
+async function getPost(slug: string) {
+  const posts = await getPosts();
+
+  return posts.find((post) => post.slug === slug);
+}
+
+export { getPosts, getPost };

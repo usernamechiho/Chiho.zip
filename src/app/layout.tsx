@@ -20,6 +20,7 @@ export default function RootLayout({
       <body className={pretendard.className}>
         <LayoutBody>
           <MainHeader />
+
           {children}
         </LayoutBody>
       </body>

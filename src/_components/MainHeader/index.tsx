@@ -20,6 +20,7 @@ export default function MainHeader() {
       <div className="flex justify-between items-center w-full relative mb-20">
         <div className="flex items-center text-sm">
           <p className="text-gray">chiho.zip&nbsp; &nbsp; / &nbsp; &nbsp;</p>
+
           <p className="text-black [word-spacing:0.7rem]">
             {formatPathname(pathname)}
           </p>

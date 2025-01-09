@@ -26,10 +26,10 @@ export default function MenuPopover({
         <motion.div
           className="absolute w-full h-[calc(100vh-7.5rem)] top-10 right-0 backdrop-blur-md"
           key="modal"
-          initial={{ opacity: 0, y: 5 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 5 }}
-          transition={{ duration: 0.2, ease: "linear" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           <nav className="border border-zinc-200 p-4 rounded-lg text-black text-md">
             <ul className="flex flex-col justify-between gap-6">

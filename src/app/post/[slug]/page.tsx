@@ -12,7 +12,7 @@ export default async function Post({
 
   if (!post) return notFound();
 
-  return <div>Post</div>;
+  return <div>HELLo</div>;
 }
 
 export async function generateStaticParams() {

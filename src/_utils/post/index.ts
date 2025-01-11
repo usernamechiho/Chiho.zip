@@ -28,11 +28,6 @@ async function getPosts(): Promise<Post[]> {
     // 디렉토리가 아닌 항목은 건너뜀
     if (!postFolder.isDirectory()) continue;
 
-    /**
-     * content.mdx 파일의 전체 경로 생성
-     *
-     * 구조: src/_posts/[post-slug]/content.mdx
-     */
     const contentPath = path.join(postPath, postFolder.name, "content.mdx");
 
     try {

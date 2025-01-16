@@ -6,6 +6,7 @@ type Post = {
   category: PostCategory;
   createdYear: string;
   createdDate: string;
+  content: string;
 };
 
 export type { PostCategory, Post };

@@ -36,6 +36,8 @@ async function getPosts(): Promise<Post[]> {
       // gray-matter를 사용하여 frontmatter 데이터 파싱
       const { data } = matter(content);
 
+      console.log(data);
+
       // 포스트 메타데이터를 배열에 추가
       posts.push({
         title: data.title,
@@ -43,6 +45,7 @@ async function getPosts(): Promise<Post[]> {
         category: data.category,
         createdYear: data.createdYear,
         createdDate: data.createdDate,
+        content: data.content,
       });
     } catch (error) {
       console.error(`Error reading post ${postFolder.name}:`, error);

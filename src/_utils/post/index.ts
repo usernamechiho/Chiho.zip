@@ -32,11 +32,9 @@ async function getPosts(): Promise<Post[]> {
 
     try {
       // MDX 파일의 내용을 UTF-8 인코딩으로 읽어옴
-      const content = await readFile(contentPath, "utf-8");
+      const mdxFileContent = await readFile(contentPath, "utf-8");
       // gray-matter를 사용하여 frontmatter 데이터 파싱
-      const { data } = matter(content);
-
-      console.log(data);
+      const { data, content } = matter(mdxFileContent);
 
       // 포스트 메타데이터를 배열에 추가
       posts.push({
@@ -45,7 +43,7 @@ async function getPosts(): Promise<Post[]> {
         category: data.category,
         createdYear: data.createdYear,
         createdDate: data.createdDate,
-        content: data.content,
+        content: content,
       });
     } catch (error) {
       console.error(`Error reading post ${postFolder.name}:`, error);

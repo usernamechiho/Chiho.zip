@@ -1,3 +1,4 @@
+import { MdxComponents } from "@/_components/MdxComponents";
 import { getPost, getPosts } from "@/_utils/post";
 import { notFound } from "next/navigation";
 
@@ -12,7 +13,7 @@ export default async function Post({
 
   if (!post) return notFound();
 
-  return <div>HELLo</div>;
+  return <div>{post.content}</div>;
 }
 
 export async function generateStaticParams() {

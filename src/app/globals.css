@@ -29,6 +29,10 @@ body {
   text-underline-offset: 2px;
 }
 
+li::marker {
+  color: var(--text-black);
+}
+
 pre {
   overflow-x: auto;
   padding: 1rem 0;

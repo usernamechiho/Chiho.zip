@@ -1,17 +1,17 @@
-/**
- * margin: 2vh 0;
-    padding: 24px;
-    font-size: var(--font-size-small);
-    background-color: var(--bg-secondary);
-    font-family: monospace;
-    white-space: pre;
-    overflow-x: auto;
-    display: block;
-    height: auto;
-    width: 100%;
-    border-radius: 4px;
- */
+import { BlockquoteHTMLAttributes } from "react";
 
-export default function Callout(props: any) {
-  return <div className="" {...props} />;
+import { DetailedHTMLProps } from "react";
+
+export default function Callout(
+  props: DetailedHTMLProps<
+    BlockquoteHTMLAttributes<HTMLQuoteElement>,
+    HTMLQuoteElement
+  >
+) {
+  return (
+    <blockquote
+      className="leading-8 text-black h-auto w-full block rounded bg-[var(--text-quote)] p-4 my-2 [&>*]:text-black"
+      {...props}
+    />
+  );
 }

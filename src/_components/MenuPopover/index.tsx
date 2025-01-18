@@ -1,7 +1,7 @@
 "use client";
 
+import { FADE_IN_UP } from "@/_constants/framer";
 import { AnimatePresence, motion } from "motion/react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const MENU_ITEMS = [
@@ -26,12 +26,10 @@ export default function MenuPopover({
         <motion.div
           className="absolute w-full h-[calc(100vh-7.5rem)] top-10 right-0 backdrop-blur-md"
           key="modal"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          {...FADE_IN_UP}
+          exit={{ opacity: 0, y: 5 }}
         >
-          <nav className="border border-zinc-200 p-4 rounded-lg">
+          <nav className="border border-zinc-200 p-4 rounded">
             <ul className="flex flex-col justify-between gap-6">
               {MENU_ITEMS.map((item) => (
                 <li

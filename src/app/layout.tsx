@@ -2,7 +2,7 @@ import LayoutBody from "@/_components/LayoutBody";
 import "./globals.css";
 import MainHeader from "@/_components/MainHeader";
 import localFont from "next/font/local";
-import { AnimateLayoutProvider } from "@/_components/AnimateLayoutProvider";
+import AnimatedPageContent from "@/_components/AnimatedPageContent";
 
 const pretendard = localFont({
   src: "./fonts/PretendardVariable.woff2",
@@ -19,12 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={pretendard.className}>
-        <AnimateLayoutProvider>
-          <LayoutBody>
-            <MainHeader />
-            {children}
-          </LayoutBody>
-        </AnimateLayoutProvider>
+        <LayoutBody>
+          <MainHeader />
+          <AnimatedPageContent>{children}</AnimatedPageContent>
+        </LayoutBody>
       </body>
     </html>
   );

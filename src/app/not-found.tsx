@@ -1,5 +1,6 @@
 "use client";
 
+import AnimatedPageHeader from "@/_components/AnimatedPageHeader";
 import { redirect } from "next/navigation";
 
 import { useEffect, useState } from "react";
@@ -21,11 +22,11 @@ export default function NotFound() {
 
   return (
     <div>
+      <AnimatedPageHeader label="404" />
+
       <p className="text-gray">길을 잃으신 것 같군요!</p>
 
-      <p className="text-sm mt-12">
-        {count}초 후, 메인 페이지로 이동합니다.
-      </p>
+      <p className="text-sm mt-12">{count}초 후, 메인 페이지로 이동합니다.</p>
     </div>
   );
 }

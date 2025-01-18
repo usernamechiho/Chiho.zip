@@ -1,3 +1,4 @@
+import AnimatedPageHeader from "@/_components/AnimatedPageHeader";
 import PostList from "@/_components/PostList";
 import { getPosts } from "@/_utils/post";
 
@@ -6,9 +7,9 @@ export default async function Post() {
 
   return (
     <div className="flex flex-col">
-      <p className="text-lg font-bold">Post</p>
+      <AnimatedPageHeader label="Post" />
 
-      <ul className="flex flex-col mt-12 gap-4">
+      <ul className="flex flex-col gap-4">
         {posts.map((post, index) => {
           /** 현재 게시글이 해당 연도의 첫 번째 게시글인지 확인 */
           const isFirstPostOfYear =

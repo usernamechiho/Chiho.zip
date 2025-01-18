@@ -1,5 +1,6 @@
 "use client";
 
+import { FADE_IN_UP } from "@/_constants/framer";
 import { Post } from "@/_types";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -19,9 +20,8 @@ export default function PostList({
     <motion.li
       key={slug}
       className="hover:text-gray cursor-pointer"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: 0.3 * index }}
+      {...FADE_IN_UP}
+      transition={{ delay: 0.1 * index }}
     >
       <Link href={`/post/${slug}`}>
         <div className="flex justify-between">

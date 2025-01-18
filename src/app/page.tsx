@@ -1,7 +1,9 @@
+import AnimatedPageHeader from "@/_components/AnimatedPageHeader";
+
 export default function Home() {
   return (
     <div>
-      <p className="text-lg font-bold">Home</p>
+      <AnimatedPageHeader label="Home" />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import AnimatedPageHeader from "@/_components/AnimatedPageHeader";
+
 export default function Resume() {
-  return <div>Resume</div>;
+  return <AnimatedPageHeader label="Resume" />;
 }

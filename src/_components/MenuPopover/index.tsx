@@ -31,7 +31,7 @@ export default function MenuPopover({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
         >
-          <nav className="border border-zinc-200 p-4 rounded-lg text-black text-md">
+          <nav className="border border-zinc-200 p-4 rounded-lg">
             <ul className="flex flex-col justify-between gap-6">
               {MENU_ITEMS.map((item) => (
                 <li

@@ -6,7 +6,7 @@ export default async function Post() {
 
   return (
     <div className="flex flex-col">
-      <p className="text-black text-lg font-bold">Post</p>
+      <p className="text-lg font-bold">Post</p>
 
       <ul className="flex flex-col mt-12 gap-4">
         {posts.map((post, index) => {

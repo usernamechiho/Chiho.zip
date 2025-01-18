@@ -19,6 +19,10 @@ const config: Config = {
         md: "var(--font-md)",
         lg: "var(--font-lg)",
       },
+
+      fontWeight: {
+        bold: "var(--font-semibold)",
+      },
     },
   },
 

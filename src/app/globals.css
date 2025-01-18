@@ -9,6 +9,8 @@
   --font-sm: 12px;
   --font-md: 14px;
   --font-lg: 16px;
+
+  --font-semibold: 500;
 }
 
 [data-theme="dark"] {
@@ -18,8 +20,12 @@
   --font-sm: 12px;
   --font-md: 14px;
   --font-lg: 16px;
+
+  --font-semibold: 500;
 }
 
 body {
   border-radius: 10px;
+  color: var(--text-black);
+  font-size: var(--font-md);
 }

@@ -21,7 +21,7 @@ export default function MainHeader() {
         <div className="flex items-center text-sm">
           <p className="text-gray">chiho.zip&nbsp; &nbsp; / &nbsp; &nbsp;</p>
 
-          <p className="text-black [word-spacing:0.7rem]">
+          <p className="[word-spacing:0.7rem]">
             {formatPathname(pathname)}
           </p>
         </div>

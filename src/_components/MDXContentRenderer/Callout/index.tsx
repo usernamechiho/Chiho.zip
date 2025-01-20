@@ -10,7 +10,7 @@ export default function Callout(
 ) {
   return (
     <blockquote
-      className="leading-8 text-black h-auto w-full block rounded bg-[var(--text-quote)] p-4 my-2 [&>*]:text-black"
+      className="leading-8 h-auto w-full block rounded bg-[var(--text-quote)] p-4 my-2 [&>*]:text-black"
       {...props}
     />
   );

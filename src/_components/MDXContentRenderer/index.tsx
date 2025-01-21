@@ -8,6 +8,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import Code from "./Code";
 import ExternalLink from "./ExternalLink";
 import Callout from "./Callout";
+import Image from "next/image";
 
 const MdxComponents: MDXComponents = {
   h1: (props) => <p className="text-lg font-semibold" {...props} />,
@@ -28,6 +29,7 @@ const MdxComponents: MDXComponents = {
   ol: (props) => (
     <ol className="list-decimal pl-4 [&>li]:text-gray" {...props} />
   ),
+  img: (props) => <Image src={props.src || ""} alt={props.alt || ""} />,
 };
 
 const rehypePrettyCodeOptions = {

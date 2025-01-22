@@ -29,7 +29,9 @@ const MdxComponents: MDXComponents = {
   ol: (props) => (
     <ol className="list-decimal pl-4 [&>li]:text-gray" {...props} />
   ),
-  img: (props) => <Image src={props.src || ""} alt={props.alt || ""} />,
+  img: (props) => (
+    <Image src={props.src || "error"} alt={props.alt || "error"} />
+  ),
 };
 
 const rehypePrettyCodeOptions = {

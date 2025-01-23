@@ -7,7 +7,7 @@ export default function Code(
 ) {
   return (
     <code
-      className="rounded px-[0.4em] py-[0.2em] text-black text-md bg-[var(--text-quote)]"
+      className="rounded px-[0.3em] py-[0.2em] text-black bg-[var(--text-quote)]"
       {...props}
     />
   );

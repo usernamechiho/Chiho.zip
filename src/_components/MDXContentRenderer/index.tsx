@@ -10,6 +10,11 @@ import ExternalLink from "./ExternalLink";
 import Callout from "./Callout";
 import Image from "next/image";
 
+const REHYPE_OPTION = {
+  theme: "github-dark",
+  defaultLanguage: "tsx",
+};
+
 const MdxComponents: MDXComponents = {
   h1: (props) => <p className="text-lg font-semibold" {...props} />,
   h2: (props) => <p className="font-semibold" {...props} />,
@@ -34,11 +39,6 @@ const MdxComponents: MDXComponents = {
   ),
 };
 
-const rehypePrettyCodeOptions = {
-  theme: "github-dark",
-  defaultLanguage: "tsx",
-};
-
 export function MDXContentRenderer({ post }: { post: Post }) {
   return (
     <div className="flex flex-col gap-4 mb-12">
@@ -55,7 +55,7 @@ export function MDXContentRenderer({ post }: { post: Post }) {
         components={MdxComponents}
         options={{
           mdxOptions: {
-            rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
+            rehypePlugins: [[rehypePrettyCode, REHYPE_OPTION]],
             remarkPlugins: [remarkGfm],
           },
         }}

@@ -1,6 +1,6 @@
-import { MDXContentRenderer } from "@/_components/MDXContentRenderer";
 import { getPostBySlug, getPosts } from "@/_utils/post";
 import { notFound } from "next/navigation";
+import { MDXContentRenderer } from "./_components/MDXContentRenderer";
 
 export default async function Post({
   params,

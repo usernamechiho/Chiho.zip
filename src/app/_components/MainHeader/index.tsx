@@ -3,7 +3,7 @@
 import { Plus } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import MenuPopover from "../MenuPopover";
+import MenuPopover from "./MenuPopover";
 
 export default function MainHeader() {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);

@@ -1,6 +1,7 @@
 import AnimatedPageHeader from "@/_components/AnimatedPageHeader";
-import PostList from "@/_components/PostList";
+
 import { getPosts } from "@/_utils/post";
+import PostList from "./_components/PostList";
 
 export default async function Post() {
   const posts = await getPosts();

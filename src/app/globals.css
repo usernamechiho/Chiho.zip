@@ -29,6 +29,10 @@ body {
   text-underline-offset: 2px;
 }
 
+li::marker {
+  color: var(--text-black);
+}
+
 hr {
   border-color: var(--text-quote);
 }

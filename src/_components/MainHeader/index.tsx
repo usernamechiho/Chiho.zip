@@ -17,13 +17,11 @@ export default function MainHeader() {
 
   return (
     <>
-      <div className="flex justify-between items-center w-full relative mb-20">
+      <div className="flex justify-between items-center w-full relative mb-24">
         <div className="flex items-center text-sm">
           <p className="text-gray">chiho.zip&nbsp; &nbsp; / &nbsp; &nbsp;</p>
 
-          <p className="[word-spacing:0.7rem]">
-            {formatPathname(pathname)}
-          </p>
+          <p className="[word-spacing:0.7rem]">{formatPathname(pathname)}</p>
         </div>
 
         <div>

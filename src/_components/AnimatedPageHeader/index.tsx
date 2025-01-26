@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export default function AnimatedPageHeader({ label }: { label: string }) {
   return (
-    <motion.div className="text-lg font-semibold mb-12" {...FADE_IN_UP}>
+    <motion.div className="text-lg font-semibold mb-16" {...FADE_IN_UP}>
       {label}
     </motion.div>
   );

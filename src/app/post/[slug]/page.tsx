@@ -1,5 +1,5 @@
 import { MDXContentRenderer } from "@/_components/MDXContentRenderer";
-import { getPost, getPosts } from "@/_utils/post";
+import { getPostBySlug, getPosts } from "@/_utils/post";
 import { notFound } from "next/navigation";
 
 export default async function Post({
@@ -9,7 +9,7 @@ export default async function Post({
 }) {
   const { slug } = await params;
 
-  const post = await getPost(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) return notFound();
 

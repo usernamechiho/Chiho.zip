@@ -19,7 +19,7 @@ const MdxComponents: MDXComponents = {
   h1: (props) => <p className="text-lg font-semibold" {...props} />,
   h2: (props) => <p className="font-semibold" {...props} />,
   a: (props) => <ExternalLink {...props} />,
-  p: (props) => <p className="text-gray" {...props} />,
+  p: (props) => <p className="text-gray mb-8" {...props} />,
   code: ({
     "data-language": dataLanguage,
     ...props
@@ -30,25 +30,34 @@ const MdxComponents: MDXComponents = {
     return <Code {...props} />;
   },
   blockquote: (props) => <Callout {...props} />,
-  ul: (props) => <ul className="list-disc pl-4 [&>li]:text-gray" {...props} />,
+  ul: (props) => (
+    <ul
+      className="list-disc pl-4 [&>li]:text-gray [&>li]:leading-relaxed"
+      {...props}
+    />
+  ),
   ol: (props) => (
-    <ol className="list-decimal pl-4 [&>li]:text-gray" {...props} />
+    <ol
+      className="list-decimal pl-4 [&>li]:text-gray [&>li]:leading-relaxed"
+      {...props}
+    />
   ),
   img: (props) => (
-    <Image src={props.src || "error"} alt={props.alt || "error"} />
+    <Image
+      src={props.src || ""}
+      alt={props.alt || ""}
+      width={0}
+      height={0}
+      sizes="100vw"
+      className="w-full h-auto"
+    />
   ),
 };
 
 export function MDXContentRenderer({ post }: { post: Post }) {
   return (
     <div className="flex flex-col gap-4 mb-12">
-      <div className="flex justify-between items-end mb-12">
-        <p className="text-lg font-semibold">{post.title}</p>
-
-        <p className="text-gray">
-          {post.createdYear}.{post.createdDate}
-        </p>
-      </div>
+      <h1 className="text-lg ">{post.title}</h1>
 
       <MDXRemote
         source={post.content}

@@ -40,7 +40,6 @@ async function getPosts(): Promise<Post[]> {
       posts.push({
         title: data.title,
         slug: data.slug,
-        category: data.category,
         createdYear: data.createdYear,
         createdDate: data.createdDate,
         content: content,
@@ -53,10 +52,10 @@ async function getPosts(): Promise<Post[]> {
   return posts;
 }
 
-async function getPost(slug: string) {
+async function getPostBySlug(slug: string) {
   const posts = await getPosts();
 
   return posts.find((post) => post.slug === slug);
 }
 
-export { getPosts, getPost };
+export { getPosts, getPostBySlug };

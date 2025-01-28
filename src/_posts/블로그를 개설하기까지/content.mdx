@@ -1,0 +1,62 @@
+---
+title: 블로그를 개설하기까지
+slug: from-zero-to-blog
+category: Javascript
+createdYear: 2025
+createdDate: 01.06
+---
+
+# 21년 만들었던 블로그
+
+21년도 취업을 하기 위해 블로그를 만들었었습니다.
+
+그때 당시엔
+
+물론, 이 블로그도 다양한 기능이 있습니다. 예를 들면,
+
+```tsx title="404 페이지" showLineNumbers
+"use client";
+
+import AnimatedPageHeader from "@/_components/AnimatedPageHeader";
+import { redirect } from "next/navigation";
+
+import { useEffect, useState } from "react";
+
+export default function NotFound() {
+  const [count, setCount] = useState(5);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCount((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  if (count === 0) {
+    redirect("/");
+  }
+
+  return (
+    <div>
+      <AnimatedPageHeader label="404" />
+
+      <p className="text-gray">
+        길을 잃으신 것 같군요! {count}초 후, 메인 페이지로 이동합니다.
+      </p>
+    </div>
+  );
+}
+```
+
+간단한 `코드조각`이나, 이미지도 렌더링 가능합니다.
+
+![이미지](/images/space.jpg)
+
+다만 이 블로그는 기고 형식으로, 개발 관련 포스트들은 컨텐츠가 분리된 다른 도메인에서 처리하려고 합니다.
+
+```
+export default () => <Carry />
+```
+
+<Carry />

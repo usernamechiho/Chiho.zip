@@ -1,3 +1,5 @@
+import AnimatedPageHeader from "@/_components/AnimatedPageHeader";
+
 export default function About() {
-  return <div>About</div>;
+  return <AnimatedPageHeader label="About" />;
 }

@@ -9,17 +9,21 @@ import Code from "./Code";
 import ExternalLink from "./ExternalLink";
 import Callout from "./Callout";
 import Image from "next/image";
+import { ContentHeading } from "../ContentHeading";
+import AnimatedPageHeader from "@/_components/AnimatedPageHeader";
+import Carry from "@/_posts/블로그를 개설하기까지/Carry";
+import dynamic from "next/dynamic"; // 이 줄을 추가해주세요
 
 const REHYPE_OPTION = {
   theme: "github-dark",
   defaultLanguage: "tsx",
 };
 
+/** TODO: 각 태그에 대한 스타일, 컴포넌트는 분리 */
 const MdxComponents: MDXComponents = {
-  h1: (props) => <p className="text-lg font-semibold" {...props} />,
-  h2: (props) => <p className="font-semibold" {...props} />,
+  h1: (props) => <p className="font-semibold" {...props} />,
   a: (props) => <ExternalLink {...props} />,
-  p: (props) => <p className="text-gray mb-8" {...props} />,
+  p: (props) => <p className="text-gray" {...props} />,
   code: ({
     "data-language": dataLanguage,
     ...props
@@ -49,15 +53,18 @@ const MdxComponents: MDXComponents = {
       width={0}
       height={0}
       sizes="100vw"
-      className="w-full h-auto"
+      className="w-full h-auto rounded"
     />
   ),
+
+  AnimatedPageHeader: dynamic(() => import("@/_components/AnimatedPageHeader")),
+  Carry: dynamic(() => import("@/_posts/블로그를 개설하기까지/Carry")),
 };
 
 export function MDXContentRenderer({ post }: { post: Post }) {
   return (
-    <div className="flex flex-col gap-4 mb-12">
-      <h1 className="text-lg ">{post.title}</h1>
+    <div className="flex flex-col mb-12">
+      <ContentHeading title={post.title} />
 
       <MDXRemote
         source={post.content}

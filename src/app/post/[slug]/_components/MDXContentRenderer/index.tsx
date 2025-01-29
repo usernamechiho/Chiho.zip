@@ -11,7 +11,6 @@ import Callout from "./Callout";
 import Image from "next/image";
 import { ContentHeading } from "../ContentHeading";
 import AnimatedPageHeader from "@/_components/AnimatedPageHeader";
-import Carry from "@/_posts/블로그를 개설하기까지/Carry";
 import dynamic from "next/dynamic"; // 이 줄을 추가해주세요
 
 const REHYPE_OPTION = {
@@ -57,8 +56,8 @@ const MdxComponents: MDXComponents = {
     />
   ),
 
+  /** 이렇게 렌더링 가능 */
   AnimatedPageHeader: dynamic(() => import("@/_components/AnimatedPageHeader")),
-  Carry: dynamic(() => import("@/_posts/블로그를 개설하기까지/Carry")),
 };
 
 export function MDXContentRenderer({ post }: { post: Post }) {

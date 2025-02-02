@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["Chiho", "pretendard"]
+  "cSpell.words": ["Chiho", "pretendard"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
 }

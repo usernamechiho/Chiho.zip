@@ -10,7 +10,6 @@ import ExternalLink from "./ExternalLink";
 import Callout from "./Callout";
 import Image from "next/image";
 import { ContentHeading } from "../ContentHeading";
-import AnimatedPageHeader from "@/_components/AnimatedPageHeader";
 import dynamic from "next/dynamic"; // 이 줄을 추가해주세요
 
 const REHYPE_OPTION = {

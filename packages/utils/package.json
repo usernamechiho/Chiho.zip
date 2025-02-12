@@ -1,0 +1,35 @@
+{
+  "name": "@rehooks/utils",
+  "description": "Utility functions and constants for rehooks",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./constants": "./src/constants/index.ts",
+    "./types": "./src/types/index.ts",
+    "./functions": "./src/functions/index.ts",
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "api:generate": "tsx ./src/api/openapi.ts"
+  },
+  "keywords": [
+    "rehooks",
+    "utils",
+    "utility",
+    "functions"
+  ],
+  "devDependencies": {
+    "@asteasolutions/zod-to-openapi": "^7.3.0",
+    "@rehooks/tsconfig": "workspace:*",
+    "axios": "^1.7.7",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "zod": "^3.23.8"
+  },
+  "dependencies": {
+    "next": "^14.2.8"
+  }
+}

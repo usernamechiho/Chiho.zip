@@ -1,0 +1,39 @@
+{
+  "name": "rehooks",
+  "private": true,
+  "description": "A CLI to scaffold your react custom hooks, with a focus on performance, reusability, and type-safety.",
+  "scripts": {
+    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\"",
+    "check-types": "turbo run check-types",
+    "prepare": "husky install",
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev"
+  },
+  "keywords": [
+    "rehooks",
+    "react",
+    "typescript",
+    "hooks",
+    "monorepo",
+    "turbo"
+  ],
+  "author": {
+    "name": "Mehdi",
+    "url": "https://github.com/pyr33x",
+    "email": "contact@pyr33x.ir"
+  },
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "turbo": "^2.4.0",
+    "typescript": "5.6.3"
+  },
+  "packageManager": "pnpm@9.11.0",
+  "engines": {
+    "node": ">=18"
+  }
+}

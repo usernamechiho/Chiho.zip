@@ -87,7 +87,7 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 
 이제 useOverlay를 통해서 리팩토링 해보겠습니다.
 
-```tsx
+```tsx title="Overlay.tsx"
 "use client";
 
 import Modal from "./_components/Modal";
@@ -226,7 +226,7 @@ overlay의 exit메서드는 애니메이션 적용을 위해 close와 분리된 
 
 `useOverlay`는 또한 `Promise`와 함께 사용할 수 있는 방법을 제공합니다.
 
-```
+```tsx title="Home.tsx"
 function Home() {
   const navigate = useNavigate();
   const overlay = useOverlay();
@@ -235,13 +235,13 @@ function Home() {
     return new Promise<boolean>((resolve) => {
       overlay.open(({ isOpen, close, exit }) => (
         <Alert
-          title='개인정보 수집에 동의하십니까?'
+          title="개인정보 수집에 동의하십니까?"
           open={isOpen}
           onButtonClick={() => {
             resolve(true);
             close();
           }}
-          buttonLabel='동의'
+          buttonLabel="동의"
         />
       ));
     });
@@ -251,18 +251,16 @@ function Home() {
     const isAgreed = await openAlert();
 
     if (isAgreed) {
-      navigate('/create-card');
+      navigate("/create-card");
     } else {
-      alert('동의하지 않으면 카드를 만들 수 없습니다.');
+      alert("동의하지 않으면 카드를 만들 수 없습니다.");
     }
   };
 
   return (
     <Flex>
       <Text>Home</Text>
-      <Button onClick={onClickCreateCardButton}>
-        카드 신청하기
-      </Button>
+      <Button onClick={onClickCreateCardButton}>카드 신청하기</Button>
     </Flex>
   );
 }
